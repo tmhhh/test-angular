@@ -1,0 +1,43 @@
+<div class="container">
+  <img src="../assets/logo-heroku.png" class="logo" />
+  <div class="content-container">
+    <h3 class="title">Log in to your account</h3>
+    <p *ngIf="isLoading">...Loading</p>
+    <form #form="ngForm" (ngSubmit)="userLogin()" class="content-body">
+      <div class="input-container">
+        <p class="input-label">Email address</p>
+        <div class="input-wrapper">
+          <img src="../assets/icon-username.png" />
+          <input
+            name="email"
+            placeholder="Email address"
+            value="tmhoang126@gmail.com"
+            [(ngModel)]="authenticationInfo.email"
+          />
+        </div>
+      </div>
+      <div class="input-container">
+        <p class="input-label">Your password</p>
+        <div class="input-wrapper">
+          <img src="../assets/icon-password.png" />
+          <input
+            name="password"
+            placeholder="Password"
+            type="password"
+            value="tmhoang126@gmail.com"
+            [(ngModel)]="authenticationInfo.password"
+          />
+        </div>
+      </div>
+      <button type="submit" class="btn-wrapper">
+        <app-spinner *ngIf="isLoading"></app-spinner>
+
+        <p>Log In</p>
+      </button>
+    </form>
+
+    <div class="content-footer">
+      <p>New to Heroku? <a>Sign Up</a></p>
+    </div>
+  </div>
+</div>
