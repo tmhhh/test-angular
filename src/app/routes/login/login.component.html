@@ -2,7 +2,6 @@
   <img src="../assets/logo-heroku.png" class="logo" />
   <div class="content-container">
     <h3 class="title">Log in to your account</h3>
-    <p *ngIf="isLoading">...Loading</p>
     <form #form="ngForm" (ngSubmit)="userLogin()" class="content-body">
       <div class="input-container">
         <p class="input-label">Email address</p>
@@ -30,14 +29,20 @@
         </div>
       </div>
       <button type="submit" class="btn-wrapper">
-        <app-spinner *ngIf="isLoading"></app-spinner>
-
         <p>Log In</p>
+        <app-spinner
+          [width]="30"
+          [height]="30"
+          *ngIf="isLoading$ | async"
+        ></app-spinner>
       </button>
+      <p *ngIf="errorMsg !== ''" class="error-msg">{{ errorMsg }}</p>
     </form>
 
     <div class="content-footer">
       <p>New to Heroku? <a>Sign Up</a></p>
     </div>
+
+    <button (click)="toggleBtn()">{{ toggle }}</button>
   </div>
 </div>

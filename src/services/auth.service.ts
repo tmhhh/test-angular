@@ -11,14 +11,5 @@ export class AuthService {
 
   userLogin(authData: AuthData) {
     return this.http.post('https://localhost:7109/api/auth/login', authData);
-    // .subscribe({
-    //   next: (response) => {
-    //     localStorage.setItem('isAuthenticated', 'true');
-    //     this.router.navigate(['']);
-    //   },
-    //   error: (err) => {
-    //     console.log({ err });
-    //   },
-    // });
   }
 }

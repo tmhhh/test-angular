@@ -6,8 +6,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./spinner.component.scss'],
 })
 export class SpinnerComponent implements OnInit {
-  @Input() width: number = 30;
-  @Input() height: number = 30;
+  @Input() width: number = 20;
+  @Input() height: number = 20;
   constructor() {}
 
   ngOnInit(): void {}
